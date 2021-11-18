@@ -20,9 +20,11 @@ namespace YouHungry.Models
         {
             //responsável por configurar o Entity Framework
             //Vamos ter que trocar pra mysql
-            //optionsBuilder.UseMySQL("server=localhost;database=library;user=user;password=password");
+            optionsBuilder.UseMySQL("server=10.0.0.90:3306;database=Desafio;user=adminmysql;password=EVOGrupo32021@#");
 
-            optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=Cursomvc;Integrated Security=true");
+            //optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=Cursomvc;Integrated Security=true");
+
+            //optionsBuilder.UseMySQL(connectionString: @"Server=10.0.0.90:3306;Database=Desafio;Integrated Security=true");
         }
 
     }
