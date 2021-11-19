@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 namespace YouHungry.Migrations
 {
-    public partial class TabelasIniciais : Migration
+    public partial class MySqlInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,14 +13,14 @@ namespace YouHungry.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Especialidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cnpj = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "text", nullable: true),
+                    Password = table.Column<string>(type: "text", nullable: true),
+                    Especialidade = table.Column<string>(type: "text", nullable: true),
+                    Cnpj = table.Column<string>(type: "text", nullable: true),
+                    Endereco = table.Column<string>(type: "text", nullable: true),
+                    Cidade = table.Column<string>(type: "text", nullable: true),
+                    Cep = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -31,13 +32,13 @@ namespace YouHungry.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Password = table.Column<string>(type: "text", nullable: true),
+                    Nome = table.Column<string>(type: "text", nullable: true),
+                    Endereco = table.Column<string>(type: "text", nullable: true),
+                    Cidade = table.Column<string>(type: "text", nullable: true),
+                    Cep = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -49,12 +50,12 @@ namespace YouHungry.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Preco = table.Column<double>(type: "float", nullable: false),
-                    Tempo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Imagem = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "text", nullable: true),
+                    Descricao = table.Column<string>(type: "text", nullable: true),
+                    Preco = table.Column<double>(type: "double", nullable: false),
+                    Tempo = table.Column<string>(type: "text", nullable: true),
+                    Imagem = table.Column<string>(type: "text", nullable: true),
                     RestauranteId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -73,10 +74,10 @@ namespace YouHungry.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     PratoId = table.Column<int>(type: "int", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
-                    Datahora = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Datahora = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {

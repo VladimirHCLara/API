@@ -18,14 +18,16 @@ namespace YouHungry.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //responsável por configurar o Entity Framework
-            //Vamos ter que trocar pra mysql
-            optionsBuilder.UseMySQL("server=10.0.0.90:3306;database=Desafio;user=adminmysql;password=EVOGrupo32021@#");
+            //    //responsável por configurar o Entity Framework
+            //    //Vamos ter que trocar pra mysql
+            optionsBuilder.UseMySQL(connectionString: @"Server = 10.0.0.90;Database=Desafio;user=adminmysql;password=EVOGrupo32021@#");
 
-            //optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=Cursomvc;Integrated Security=true");
+            //    //teste mysql local
+            //optionsBuilder.UseMySQL(connectionString: @"Server = localhost;Database=Desafio2;user=root;password=EVOGrupo32021@#");
 
-            //optionsBuilder.UseMySQL(connectionString: @"Server=10.0.0.90:3306;Database=Desafio;Integrated Security=true");
+            //    //optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=Cursomvc;Integrated Security=true", options => options.EnableRetryOnFailure());
         }
+
 
     }
 }
